@@ -43,7 +43,7 @@ let message = ref('Hello, Watchers!')
 let number = ref(1)
 
 const stopWatch = watch(number, (newValue, oldValue) => {
-  // A callback function, called when number is changed.
+  // A callback function
   console.log(
     'Watch a ref(primitive value): number changes',
     newValue,
@@ -54,7 +54,7 @@ const stopWatch = watch(number, (newValue, oldValue) => {
   }
 })
 
-// Scenario 2: Watch a property in a ref(object)
+// Watch a property in a ref(object)
 let wizard1 = ref({
   id: 1001,
   name: 'Harry Potter',
@@ -96,7 +96,7 @@ watch(
   { deep: true }
 )
 
-// Scenario 3: Watch a ref(object)
+// Watch a ref(object)
 let wizard2 = ref({
   id: 1003,
   name: 'Ron Weasley',
@@ -129,7 +129,7 @@ watch(
   { deep: true }
 )
 
-// Scenario 4: Watch an array of ref(primitive value), a property of a ref(object), and a ref(object)
+// Watch an array of ref(primitive value), a property of a ref(object), and a ref(object)
 watch(
   [number, () => wizard1.value.name, wizard2],
   (newValue, oldValue) => {
